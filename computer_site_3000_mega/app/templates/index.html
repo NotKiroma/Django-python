@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block my_title %}Главная{% endblock %}</title>
+</head>
+<style>
+  h1{
+    text-align: center;
+  }
+  body{
+    padding: 0;
+    margin: 0;
+  }
+  a{
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: black;
+  }
+  .header{
+    align-items: center;
+    height: 3rem;
+    display: flex;
+    justify-content: space-around;
+    background-color: cadetblue;
+  }
+</style>
+{% block my_css %}
+
+{% endblock %}
+<body>
+  <header>
+    <div class="header">
+      <a href="/">Главная</a>
+      <a href="/admin">Админка</a>
+      <a href="/catalog">Каталог</a>
+    </div>
+
+    <main>
+      {% block content %}
+        <h1>Это главная страница сайта</h1>
+      {% endblock %}
+    </main>
+  </header>
+</body>
+</html>

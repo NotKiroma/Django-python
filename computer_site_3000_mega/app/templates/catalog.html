@@ -1,0 +1,39 @@
+{% extends "index.html" %}
+
+{% block my_title %}Каталог{% endblock %}
+
+{% block my_css %}
+  <style>
+    .catalog{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+    }
+    .pro{
+      padding: 1rem;
+      border-radius: 1rem;
+      width: 45rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 3rem;
+      background-color: rgb(138, 173, 205);
+      img{
+        max-width: 300px;
+      }
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+  {% for tovari in products %}
+    <div class="catalog">
+      <div class="pro">
+        <img src="{{ tovari.photo.url }}" alt="">
+        <h1>{{ tovari.name }}</h1>
+        <h1>{{ tovari.price }} T</h1>
+      </div>
+    </div>
+  {% endfor %}
+{% endblock %}
